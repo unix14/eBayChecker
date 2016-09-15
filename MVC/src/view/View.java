@@ -5,7 +5,7 @@ import algorithms.mazeGenerators.Position;
 import algorithms.search.Solution;
 /**
  * 
- *The View interface is a part of MVP design. View is responsible for the 
+ *The View interface is a part of MVC design. View is responsible for the 
  *content display.
  *
  */
