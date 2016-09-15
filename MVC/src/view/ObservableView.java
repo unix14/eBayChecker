@@ -9,7 +9,7 @@ import controller.Command;
  * Observable. Meaning they can send notify to Observers.
  *
  */
-public abstract class ObservableView extends Observable {
+public abstract class ObservableView extends Observable implements View {
 
 	protected String[] line = null; //line stores the whole command the user inserted
 	protected Command command; //command stores only the command taken from the line the user inserted
