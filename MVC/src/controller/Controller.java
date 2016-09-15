@@ -3,19 +3,18 @@ package controller;
 import java.util.Observable;
 import java.util.Observer;
 import java.util.concurrent.ExecutionException;
-
-import javax.swing.text.View;
 import algorithms.mazeGenerators.Maze3d;
 import algorithms.mazeGenerators.Position;
 import algorithms.search.Solution;
 import model.Model;
+import view.ObservableView;
 
 public class Controller implements Observer{
 	private Model m;
-	private View v;
+	private ObservableView v;
 	private Command command;
 	
-	public Controller(Model m, View v) {
+	public Controller(Model m, ObservableView v) {
 		this.m = m;
 		this.v = v;
 
