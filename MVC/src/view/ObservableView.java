@@ -2,7 +2,6 @@ package view;
 
 import java.util.HashMap;
 import java.util.Observable;
-
 import controller.Command;
 
 /**

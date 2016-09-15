@@ -5,15 +5,15 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.HashMap;
-
 import algorithms.mazeGenerators.Maze3d;
 import algorithms.mazeGenerators.Position;
 import algorithms.search.Solution;
 import controller.Command;
 /**
- * MyCLIView extends ObservableView and implements View and Runnable.
- * Responsible for the Command Line Interface view. Observable because it notify the presenter
- * and Runnable because it can run in a new thread.
+ * Responsible for the Command Line Interface view.<br>
+ * CLIView extends ObservableView and implements View and Runnable Interfaces.<br>
+ *  <u>View</u> - it notify the controller<br>
+ * <u>Runnable</u> - it can run in a new thread.
  *
  */
 public class CLIView extends ObservableView implements View, Runnable {
@@ -24,19 +24,18 @@ public class CLIView extends ObservableView implements View, Runnable {
 	public CLIView(HashMap<String, Command> map) {
 		super(map);// initializes the hash map in ObservableView
 	}
-
+	/**
+	* receiving commands from user.<br>
+	* running when start() method is called from thread. 
+	*/
 	@Override
 	public void run() {
-		//receiving commands from user.
-		//running when start() method is called from thread. 
 		try {
 			do {
-
 				line = (in.readLine()).split(" ");
 				command = hmap.get(line[0]);
 				setChanged();
 				notifyObservers(command);
-				
 			}while (!(line[0]).equals("exit"));
 
 		} catch (IOException e) {
