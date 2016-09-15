@@ -281,12 +281,11 @@ public class MyModel extends Observable implements Model {
 		}
 		sendToServer("exit");
 		executor.shutdownNow();
-		System.out.println("disconnected from server");
+		System.out.println("Disconnected from server");
 		outToServer.close();
 		try {
 			theServer.close();
 		} catch (IOException e) {
-			
 			e.printStackTrace();
 		}
 	}
