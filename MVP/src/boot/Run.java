@@ -23,10 +23,10 @@ public class Run {
 		File file = new File("properties.xml");
 		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-		Document doc = dBuilder.parse(file);
-		doc.getDocumentElement().normalize();
+		Document doc = (Document) dBuilder.parse(file);
+		((org.w3c.dom.Document) doc).getDocumentElement().normalize();
 		
-		properties = new Properties(Integer.parseInt(doc.getElementsByTagName("numOfThreads").item(0).getTextContent()),
+		properties = new Properties(Integer.parseInt(((org.w3c.dom.Document) doc).getElementsByTagName("numOfThreads").item(0).getTextContent()),
 				doc.getElementsByTagName("interfaceView").item(0).getTextContent(),
 				doc.getElementsByTagName("searchAlgo").item(0).getTextContent());
 	}
