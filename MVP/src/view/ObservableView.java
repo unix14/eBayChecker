@@ -2,7 +2,7 @@ package view;
 
 import java.util.HashMap;
 import java.util.Observable;
-import controller.Command;
+import presenter.Command;
 
 /**
  * ObservableView is an abstract class representing classes that are View and also

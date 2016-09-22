@@ -3,6 +3,7 @@ package presenter;
 import presenter.Command;
 
 import java.util.Observable;
+import java.util.Observer;
 import java.util.concurrent.ExecutionException;
 
 import algorithms.mazeGenerators.Maze3d;
@@ -11,7 +12,7 @@ import algorithms.search.Solution;
 import model.Model;
 import view.ObservableView;
 
-public class Presenter {
+public class Presenter implements Observer{
 	private ObservableView ui;
 	private Model model;
 	private Command command;

@@ -8,7 +8,7 @@ import java.util.HashMap;
 import algorithms.mazeGenerators.Maze3d;
 import algorithms.mazeGenerators.Position;
 import algorithms.search.Solution;
-import controller.Command;
+import presenter.Command;
 /**
  * Responsible for the Command Line Interface view.<br>
  * CLIView extends ObservableView and implements View and Runnable Interfaces.<br>
