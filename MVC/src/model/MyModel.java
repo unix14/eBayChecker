@@ -1,15 +1,5 @@
 package model;
 
-import algorithms.io.MyCompressorOutputStream;
-import algorithms.io.MyDecompressorInputStream;
-import algorithms.mazeGenerators.Maze3d;
-import algorithms.mazeGenerators.MazeArgInit;
-import algorithms.mazeGenerators.MyMaze3dGenerator;
-import algorithms.mazeGenerators.Position;
-import algorithms.search.Solution;
-import algorithms.search.searchables.SearchableMaze;
-import algorithms.search.searchers.BFS;
-import algorithms.search.searchers.DFS;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -22,15 +12,25 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.Arrays;
-import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
-import java.util.zip.GZIPInputStream;
 import java.util.HashMap;
 import java.util.Observable;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+import java.util.zip.GZIPInputStream;
+import javax.swing.text.Position;
+import algorithms.io.MyCompressorOutputStream;
+import algorithms.io.MyDecompressorInputStream;
+import algorithms.mazeGenerators.Maze3d;
+import algorithms.mazeGenerators.MazeArgInit;
+import algorithms.mazeGenerators.MyMaze3dGenerator;
+import algorithms.search.Solution;
+import algorithms.search.searchables.SearchableMaze;
+import algorithms.search.searchers.BFS;
+import algorithms.search.searchers.DFS;
 /**
  * Model class is a part of MVP structure. The Model class is responsible for the calculations of a maze.
  *
