@@ -131,9 +131,9 @@ public class Maze3d implements Serializable{
 }
 	//Print Maze Cells
 	public void print(){
-		for(int i=0;i<this.getZlength();i++){
+		for(int l=0;l<this.getZlength();l++){
 			for(int k=0;k<this.getYlength();k++){
-				for(int l=0;l<this.getXlength();l++){
+				for(int i=0;i<this.getXlength();i++){
 					System.out.println(this.mazeCells[i][k][l]+" ");
 				}
 				System.out.print("\n");
