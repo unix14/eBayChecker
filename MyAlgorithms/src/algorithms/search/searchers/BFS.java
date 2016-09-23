@@ -25,9 +25,10 @@ public class BFS<T> extends CommonSearcher<T> {
 		ArrayList<State<T>> successors;
 		State<T> state;
 		
-
-		open.add(s.getStartState());
-		addEvaluated();
+		if(s != null){
+			open.add(s.getStartState());
+			addEvaluated();
+		}
 
 		while (open.isEmpty() == false) {
 			state = open.poll();
