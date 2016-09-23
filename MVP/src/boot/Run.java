@@ -4,15 +4,15 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.Properties;
-import javax.swing.text.Document;
+import org.w3c.dom.Document;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import org.xml.sax.SAXException;
-import presenter.Presenter;
 import model.MyModel;
 import presenter.Command;
+import presenter.Presenter;
+import presenter.Properties;
 import view.CLIView;
 
 public class Run {
@@ -24,7 +24,7 @@ public class Run {
 		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 		Document doc = (Document) dBuilder.parse(file);
-		((org.w3c.dom.Document) doc).getDocumentElement().normalize();
+		doc.getDocumentElement().normalize();
 		
 		properties = new Properties(Integer.parseInt(((org.w3c.dom.Document) doc).getElementsByTagName("numOfThreads").item(0).getTextContent()),
 				doc.getElementsByTagName("interfaceView").item(0).getTextContent(),
@@ -98,7 +98,6 @@ public class Run {
 					}catch (IOException  e) {
 						e.printStackTrace();
 					}
-
 				}
 			});
 
