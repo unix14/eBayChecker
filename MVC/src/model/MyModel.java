@@ -32,7 +32,7 @@ import algorithms.search.searchables.SearchableMaze;
 import algorithms.search.searchers.BFS;
 import algorithms.search.searchers.DFS;
 /**
- * Model class is a part of MVP structure. The Model class is responsible for the calculations of a maze.
+ * Model class is a part of MVC structure. The Model class is responsible for the calculations of a maze.
  *
  */
 public class MyModel extends Observable implements Model {
