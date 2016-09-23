@@ -16,11 +16,11 @@ import presenter.Properties;
 import view.CLIView;
 
 public class Run {
+	private static final String propFile = new String("properties.xml");
 	private static Properties properties;
 
-
 	public static void initProperties() throws ParserConfigurationException, SAXException, IOException {
-		File file = new File("properties.xml");
+		File file = new File(propFile);
 		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 		Document doc = (Document) dBuilder.parse(file);
@@ -30,8 +30,6 @@ public class Run {
 				doc.getElementsByTagName("interfaceView").item(0).getTextContent(),
 				doc.getElementsByTagName("searchAlgo").item(0).getTextContent());
 	}
-
-
 	
 	public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException,
 			ParserConfigurationException, SAXException {
@@ -47,7 +45,7 @@ public class Run {
 			v.addObserver(p);
 			m.addObserver(p);
 
-			/* hash map creates all the commands here */
+			/* hash map creates supported commands here */
 			hmap.put("dir", new Command() {
 
 				@Override
