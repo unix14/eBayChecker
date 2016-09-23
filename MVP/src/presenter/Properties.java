@@ -7,9 +7,9 @@ import java.io.Serializable;
  */
 @SuppressWarnings("serial")
 public class Properties implements Serializable {
-	private int numOfThreads;
-	private String interfaceView;
-	private String searchAlgo;
+	private int numOfThreads = 1;
+	private String interfaceView = null;
+	private String searchAlgo = null;
 	
 	public Properties(int size, String intrView, String srchAlgo) {
 		this.numOfThreads=size;

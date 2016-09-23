@@ -37,11 +37,12 @@ import algorithms.search.searchers.DFS;
  */
 public class MyModel extends Observable implements Model {
 
-	private int numOfThreads = 1; //number of threads running
+	private int numOfThreads = 1; 			//number of threads running
 	private HashMap<String, Maze3d> hmap = new HashMap<String, Maze3d>();
-	private HashMap<Maze3d, Solution<Position>> shmap = new HashMap<Maze3d, Solution<Position>>();
-	private ExecutorService executor = Executors.newFixedThreadPool(numOfThreads);
+	private HashMap<Maze3d, Solution<Position>> shmap = new HashMap<Maze3d, Solution<Position>>(); 		//Cached hashMap
+	private ExecutorService executor = Executors.newFixedThreadPool(numOfThreads);			//ThreadPool
 	private Object data;
+	private static final String solutionsFile = new String("solutions.gzip");
 	private Future<Maze3d> futureMaze; //used for maze generation
 	private Future<Solution<Position>> futureSolution; //calculation for the solution 
 	private Maze3d maze3d;
@@ -297,7 +298,7 @@ public class MyModel extends Observable implements Model {
 	
 	@SuppressWarnings("unchecked")
 	public void loadSolutions() throws ClassNotFoundException, IOException{
-		File myFile = new File("solutions.gzip");
+		File myFile = new File(solutionsFile);
 		try
 		{
 			if(!myFile.createNewFile())
