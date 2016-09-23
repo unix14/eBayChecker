@@ -10,6 +10,13 @@ import algorithms.search.Solution;
 import presenter.Command;
 import view.gui.StartWindow;
 
+
+/**
+ * GUIView extends ObservableView and implements View and Observer.<br>
+ * Responsible for the GUI view. it notify the presenter
+ * and get notified from the GUI.
+ *
+ */
 public class GUIView extends ObservableView implements View, Observer  {
 	private StartWindow sw;
 	
