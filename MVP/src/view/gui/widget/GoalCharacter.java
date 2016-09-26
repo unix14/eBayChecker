@@ -13,7 +13,7 @@ public class GoalCharacter {
 
 	private int x, y;
 	private Display display; //display of the maze
-	private Image image = new Image(display, "C:/Users/Rave/Documents/Java/project/King_pig.png");
+	private Image image = new Image(display, "C:/Users/eyal/git/MVP/resources/goalChar.png");
 	
 
 	//CTOR

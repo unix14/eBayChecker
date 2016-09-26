@@ -12,7 +12,7 @@ public class GameCharacter {
 
 	private int x, y;
 	private Display display;//display of the maze
-	private Image image = new Image(display, "C:/Users/Rave/Documents/Java/project/bknation_Angry-Birds.jpg");
+	private Image image = new Image(display, "C:/Users/eyal/git/MVP/resources/gameChar.jpg");
 	
 
 	//CTOR

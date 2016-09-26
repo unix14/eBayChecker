@@ -11,7 +11,7 @@ import org.eclipse.swt.widgets.Display;
 public class FinishGesture {
 	private int x, y; //position of the gesture in the display
 	private Display display;//display of the maze
-	private Image image = new Image(display, "C:/Users/Rave/Documents/Java/project/king_red.png");
+	private Image image = new Image(display, "C:/Users/eyal/git/MVP/resources/finishChar.jpg");
 	
 
 	//CTOR
