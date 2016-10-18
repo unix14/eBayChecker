@@ -18,6 +18,7 @@ import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
 import org.eclipse.swt.widgets.MessageBox;
+
 import algorithms.mazeGenerators.Maze3d;
 import algorithms.mazeGenerators.Position;
 import algorithms.search.Solution;
@@ -149,11 +150,11 @@ public class StartWindow extends BasicWindow {
 						maze.setPostion(p);
 						maze.display();
 						maze.redraw();
-						if (m.getPossibledirections(p).contains(new Position(p.getX(), p.getY(), p.getZ() + 1)))
+						if (m.getPossibleMoves(p).contains(new Position(p.getX(), p.getY(), p.getZ() + 1)))
 							stepForward.setForeground(display.getSystemColor(SWT.COLOR_BLACK));
 						else
 							stepForward.setForeground(display.getSystemColor(SWT.COLOR_GRAY));
-						if (m.getPossibledirections(p).contains(new Position(p.getX(), p.getY(), p.getZ() - 1)))
+						if (m.getPossibleMoves(p).contains(new Position(p.getX(), p.getY(), p.getZ() - 1)))
 							stepBackward.setForeground(display.getSystemColor(SWT.COLOR_BLACK));
 						else
 							stepBackward.setForeground(display.getSystemColor(SWT.COLOR_GRAY));
@@ -189,92 +190,92 @@ public class StartWindow extends BasicWindow {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				//changing the position of the character and redrawing the maze
-				if (e.keyCode == SWT.ARROW_LEFT && m.getValue(new Position(p.getX() - 1, p.getY(), p.getZ())) == 0) {
+				if (e.keyCode == SWT.ARROW_LEFT && m.getValue(p.getX() - 1, p.getY(), p.getZ()) == 0) {
 					p.setX(p.getX() - 1);
 					maze.setPostion(p);
 					maze.display();
 					maze.redraw();
-					if (m.getPossibledirections(p).contains(new Position(p.getX(), p.getY(), p.getZ() + 1)))
+					if (m.getPossibleMoves(p).contains(new Position(p.getX(), p.getY(), p.getZ() + 1)))
 						stepForward.setForeground(display.getSystemColor(SWT.COLOR_BLACK));
 					else
 						stepForward.setForeground(display.getSystemColor(SWT.COLOR_GRAY));
-					if (m.getPossibledirections(p).contains(new Position(p.getX(), p.getY(), p.getZ() - 1)))
+					if (m.getPossibleMoves(p).contains(new Position(p.getX(), p.getY(), p.getZ() - 1)))
 						stepBackward.setForeground(display.getSystemColor(SWT.COLOR_BLACK));
 					else
 						stepBackward.setForeground(display.getSystemColor(SWT.COLOR_GRAY));
 
 				}
 
-				if (e.keyCode == SWT.ARROW_RIGHT && m.getValue(new Position(p.getX() + 1, p.getY(), p.getZ())) == 0) {
+				if (e.keyCode == SWT.ARROW_RIGHT && m.getValue(p.getX() + 1, p.getY(), p.getZ()) == 0) {
 					p.setX(p.getX() + 1);
 					maze.setPostion(p);
 					maze.display();
 					maze.redraw();
-					if (m.getPossibledirections(p).contains(new Position(p.getX(), p.getY(), p.getZ() + 1)))
+					if (m.getPossibleMoves(p).contains(new Position(p.getX(), p.getY(), p.getZ() + 1)))
 						stepForward.setForeground(display.getSystemColor(SWT.COLOR_BLACK));
 					else
 						stepForward.setForeground(display.getSystemColor(SWT.COLOR_GRAY));
-					if (m.getPossibledirections(p).contains(new Position(p.getX(), p.getY(), p.getZ() - 1)))
+					if (m.getPossibleMoves(p).contains(new Position(p.getX(), p.getY(), p.getZ() - 1)))
 						stepBackward.setForeground(display.getSystemColor(SWT.COLOR_BLACK));
 					else
 						stepBackward.setForeground(display.getSystemColor(SWT.COLOR_GRAY));
 				}
 
-				if (e.keyCode == SWT.ARROW_DOWN && m.getValue(new Position(p.getX(), p.getY() + 1, p.getZ())) == 0) {
+				if (e.keyCode == SWT.ARROW_DOWN && m.getValue(p.getX(), p.getY() + 1, p.getZ()) == 0) {
 					p.setY(p.getY() + 1);
 					maze.setPostion(p);
 					maze.display();
 					maze.redraw();
-					if (m.getPossibledirections(p).contains(new Position(p.getX(), p.getY(), p.getZ() + 1)))
+					if (m.getPossibleMoves(p).contains(new Position(p.getX(), p.getY(), p.getZ() + 1)))
 						stepForward.setForeground(display.getSystemColor(SWT.COLOR_BLACK));
 					else
 						stepForward.setForeground(display.getSystemColor(SWT.COLOR_GRAY));
-					if (m.getPossibledirections(p).contains(new Position(p.getX(), p.getY(), p.getZ() - 1)))
+					if (m.getPossibleMoves(p).contains(new Position(p.getX(), p.getY(), p.getZ() - 1)))
 						stepBackward.setForeground(display.getSystemColor(SWT.COLOR_BLACK));
 					else
 						stepBackward.setForeground(display.getSystemColor(SWT.COLOR_GRAY));
 				}
 
-				if (e.keyCode == SWT.ARROW_UP && m.getValue(new Position(p.getX(), p.getY() - 1, p.getZ())) == 0) {
+				if (e.keyCode == SWT.ARROW_UP && m.getValue(p.getX(), p.getY() - 1, p.getZ()) == 0) {
 					p.setY(p.getY() - 1);
 					maze.setPostion(p);
 					maze.display();
 					maze.redraw();
-					if (m.getPossibledirections(p).contains(new Position(p.getX(), p.getY(), p.getZ() + 1)))
+					if (m.getPossibleMoves(p).contains(new Position(p.getX(), p.getY(), p.getZ() + 1)))
 						stepForward.setForeground(display.getSystemColor(SWT.COLOR_BLACK));
 					else
 						stepForward.setForeground(display.getSystemColor(SWT.COLOR_GRAY));
-					if (m.getPossibledirections(p).contains(new Position(p.getX(), p.getY(), p.getZ() - 1)))
+					if (m.getPossibleMoves(p).contains(new Position(p.getX(), p.getY(), p.getZ() - 1)))
 						stepBackward.setForeground(display.getSystemColor(SWT.COLOR_BLACK));
 					else
 						stepBackward.setForeground(display.getSystemColor(SWT.COLOR_GRAY));
 				}
 
-				if (e.keyCode == SWT.PAGE_UP && m.getValue(new Position(p.getX(), p.getY(), p.getZ() + 1)) == 0) {
+				if (e.keyCode == SWT.PAGE_UP && m.getValue(p.getX(), p.getY(), p.getZ() + 1) == 0) {
 					p.setZ(p.getZ() + 1);
 					maze.setPostion(p);
 					maze.display();
 					maze.redraw();
-					if (m.getPossibledirections(p).contains(new Position(p.getX(), p.getY(), p.getZ() + 1)))
+					if (m.getPossibleMoves(p).contains(new Position(p.getX(), p.getY(), p.getZ() + 1)))
 						stepForward.setForeground(display.getSystemColor(SWT.COLOR_BLACK));
 					else
 						stepForward.setForeground(display.getSystemColor(SWT.COLOR_GRAY));
-					if (m.getPossibledirections(p).contains(new Position(p.getX(), p.getY(), p.getZ() - 1)))
+					if (m.getPossibleMoves(p).contains(new Position(p.getX(), p.getY(), p.getZ() - 1)))
 						stepBackward.setForeground(display.getSystemColor(SWT.COLOR_BLACK));
 					else
 						stepBackward.setForeground(display.getSystemColor(SWT.COLOR_GRAY));
 				}
 
-				if (e.keyCode == SWT.PAGE_DOWN && m.getValue(new Position(p.getX(), p.getY(), p.getZ() - 1)) == 0) {
+				if (e.keyCode == SWT.PAGE_DOWN && m.getValue(p.getX(), p.getY(), p.getZ() - 1) == 0) {
 					p.setZ(p.getZ() - 1);
 					maze.setPostion(p);
 					maze.display();
 					maze.redraw();
-					if (m.getPossibledirections(p).contains(new Position(p.getX(), p.getY(), p.getZ() + 1)))
+					if (m.getPossibleMoves(p).contains(new Position(p.getX(), p.getY(), p.getZ() + 1)))
 						stepForward.setForeground(display.getSystemColor(SWT.COLOR_BLACK));
 					else
 						stepForward.setForeground(display.getSystemColor(SWT.COLOR_GRAY));
-					if (m.getPossibledirections(p).contains(new Position(p.getX(), p.getY(), p.getZ() - 1)))
+					if (m.getPossibleMoves(p).contains(new Position(p.getX(), p.getY(), p.getZ() - 1)))
 						stepBackward.setForeground(display.getSystemColor(SWT.COLOR_BLACK));
 					else
 						stepBackward.setForeground(display.getSystemColor(SWT.COLOR_GRAY));

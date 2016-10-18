@@ -48,7 +48,7 @@ public class CLIView extends ObservableView implements View, Runnable {
 		for (int h = 0; h < maze.getZlength(); h++) {
 			for (int j = 0; j < maze.getYlength(); j++) {
 				for (int i = 0; i < maze.getXlength(); i++) {
-					out.print(maze.getValue(new Position(i,j,h)) + ", ");
+					out.print(maze.getValue(i,j,h) + ", ");
 				}
 				out.print("\n");
 			}

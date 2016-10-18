@@ -21,12 +21,12 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.zip.GZIPInputStream;
-import algorithms.mazeGenerators.Position;
+
 import algorithms.io.MyCompressorOutputStream;
 import algorithms.io.MyDecompressorInputStream;
 import algorithms.mazeGenerators.Maze3d;
-import algorithms.mazeGenerators.MazeArgInit;
 import algorithms.mazeGenerators.MyMaze3dGenerator;
+import algorithms.mazeGenerators.Position;
 import algorithms.search.Solution;
 import algorithms.search.searchables.SearchableMaze;
 import algorithms.search.searchers.BFS;
@@ -138,7 +138,7 @@ public class MyModel extends Observable implements Model {
 
 			@Override
 			public Maze3d call() throws Exception {
-				Maze3d maze = new MyMaze3dGenerator().generate(new MazeArgInit(x, y, z));
+				Maze3d maze = new MyMaze3dGenerator().generate(x, y, z);
 				hmap.put(name, maze);
 				setChanged();
 				notifyObservers("done generate maze");
