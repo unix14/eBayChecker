@@ -146,7 +146,8 @@ public class StartWindow extends BasicWindow {
 						setChanged();
 						notifyObservers("display this"); 
 						maze.setMaze(m);//passing the maze to the widget
-						p = m.getStartPosition();
+						//p = m.getStartPosition();
+						p=new Position (2,2,2);
 						maze.setPostion(p);
 						maze.display();
 						maze.redraw();

@@ -41,7 +41,7 @@ public class Run {
 		
 		HashMap<String, Command> hmap = new HashMap<String, Command>();
 		if (properties.getInterfaceView().equals("GUI")) {
-			StartWindow s = new StartWindow(1300, 1000, properties.getSearchAlgo());
+			StartWindow s = new StartWindow(650, 620, properties.getSearchAlgo());
 			MyModel m = new MyModel(properties.getNumOfThreads());
 		
 			GUIView v = new GUIView(hmap, s);

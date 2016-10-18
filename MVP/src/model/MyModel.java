@@ -230,7 +230,7 @@ public class MyModel extends Observable implements Model {
 
 	@Override
 	public void solve(String name, String algo) {
-		if (shmap.containsKey(hmap.get(name))) {
+		if (shmap != null && shmap.containsKey(hmap.get(name))) {
 			setChanged();
 			notifyObservers("maze is solved");
 		} else {
