@@ -48,7 +48,7 @@ public class ServerModel extends Observable implements Model {
 	 * @throws IOException
 	 */
 	@SuppressWarnings("unchecked")
-	public void loadSolutions() throws ClassNotFoundException, IOException{
+	public void loadSolutions() {
 	
 		File myFile = new File("solutions.gzip");
 		try

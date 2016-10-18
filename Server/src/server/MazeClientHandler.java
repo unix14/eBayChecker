@@ -46,7 +46,7 @@ public class MazeClientHandler implements ClientHandler, Observer {
 			}
 			in.close();
 			out.close();
-		} catch (IOException | ClassNotFoundException e) {
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
