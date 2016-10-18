@@ -233,9 +233,9 @@ public class MazeProperties {
 				
 			}
 		});		
-		Button aStar=new Button(searchAlgo, SWT.RADIO);
-		aStar.setText("AStar");
-		aStar.addSelectionListener(new SelectionListener() {
+		Button dfs=new Button(searchAlgo, SWT.RADIO);
+		dfs.setText("DFS");
+		dfs.addSelectionListener(new SelectionListener() {
 			
 			@Override
 			public void widgetSelected(SelectionEvent arg0) {
@@ -245,7 +245,7 @@ public class MazeProperties {
 					DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
 					Document doc = docBuilder.parse(inputFile);
 					doc.getDocumentElement().normalize();
-					doc.getElementsByTagName("searchAlgo").item(0).getFirstChild().setNodeValue("AStar");
+					doc.getElementsByTagName("searchAlgo").item(0).getFirstChild().setNodeValue("DFS");
 					TransformerFactory transformerFactory = TransformerFactory.newInstance();
 					Transformer transformer = transformerFactory.newTransformer();
 					DOMSource source = new DOMSource(doc);

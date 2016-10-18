@@ -27,7 +27,7 @@ public class GoalCharacter {
 	public void paint(PaintEvent e, int w, int h) {
 		
 		
-		e.gc.drawImage(image, 0, 0,Math.min(image.getBounds().width, x),Math.min(image.getBounds().height, y),x,y,w,h);
+		e.gc.drawImage(image, 0, 0,image.getBounds().width,image.getBounds().height,x,y,w,h);
 		
 	}
 }
