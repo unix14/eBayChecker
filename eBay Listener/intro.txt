@@ -1,0 +1,12 @@
+Welcome to eBay Item Checker!
+===================
+
+1. Click 'Open'
+
+2. Click 'Run'
+
+3. Click 'Save'
+
+===================
+
+eNjoy ;)
