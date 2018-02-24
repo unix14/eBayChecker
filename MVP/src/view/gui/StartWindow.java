@@ -69,7 +69,7 @@ public class StartWindow extends BasicWindow {
 		Menu fileMenu = new Menu(shell, SWT.DROP_DOWN);
 
 		MenuItem cascadeFileMenu = new MenuItem(menuBar, SWT.CASCADE);
-		cascadeFileMenu.setText("&File");
+		cascadeFileMenu.setText("&Filelalalala");
 		cascadeFileMenu.setMenu(fileMenu);
 
 		MenuItem fileSaveItem = new MenuItem(fileMenu, SWT.PUSH);

@@ -1,0 +1,14 @@
+Welcome To eBay Item Checker
+==============================
+
+1. Initially Press 'Open' to load Item Numbers List
+
+2. Click 'Run' in order to run eBay Checker
+
+3. Lastly, hit 'Save' to write missing items
+
+==============================
+
+	enjoy ;)
+
+==============================
